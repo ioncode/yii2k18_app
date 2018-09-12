@@ -7,6 +7,7 @@ use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\bootstrap\Dropdown;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
@@ -35,6 +36,25 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
+	echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-left'],
+        'items' => [
+            ['label' => 'Airports', 'url' => ['/airport']],
+            ['label' => 'Trips', 'url' => ['/trip']],
+            ['label' => 'Services', 'url' => ['/trip-service']],
+			['label' => 'next item', 'url' => ['/trip-service']]
+          
+        ],
+    ]);
+/* 	echo '<div class="dropdown">
+		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Label <b class="caret"></b></a>';
+		Dropdown::widget([
+				'items' => [
+					['label' => 'DropdownA', 'url' => '/'],
+					['label' => 'DropdownB', 'url' => '#'],
+				],
+			]);
+	echo '</div>'; */
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
@@ -69,9 +89,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= Yii::$app->name.' '.date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <!-- <p class="pull-right"><?= Yii::powered() ?></p> -->
     </div>
 </footer>
 
