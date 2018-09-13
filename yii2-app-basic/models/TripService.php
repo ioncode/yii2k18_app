@@ -86,6 +86,14 @@ class TripService extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Trip::className(), ['id' => 'trip_id']);
     }
+	
+	/**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFlightSegments()
+    {
+        return $this->hasMany(FlightSegment::className(), ['flight_id' => 'id']);
+    }
 
     /**
      * {@inheritdoc}

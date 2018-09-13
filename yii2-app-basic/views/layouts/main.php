@@ -42,7 +42,7 @@ AppAsset::register($this);
             ['label' => 'Airports', 'url' => ['/airport']],
             ['label' => 'Trips', 'url' => ['/trip']],
             ['label' => 'Services', 'url' => ['/trip-service']],
-			['label' => 'next item', 'url' => ['/trip-service']]
+			['label' => 'Search', 'url' => ['/search']]
           
         ],
     ]);
